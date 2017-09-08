@@ -1,0 +1,16 @@
+#ApuestaMaestro nav {
+    margin-left: 0;
+    border: 1px solid #cccccc;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    padding-top: 1ex;
+    display: block;
+    width: 20%;
+}
+
+#ApuestaMaestro #cuerpo .container {
+    width: 50%;
+    float: left;
+    text-align: center;
+    margin:0;
+}

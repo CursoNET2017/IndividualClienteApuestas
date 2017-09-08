@@ -1,0 +1,46 @@
+.navbar-header a{
+	padding-top: 7px;
+	padding-bottom: 7px;
+
+}
+img{
+	margin-left: 10px;
+	width: 48px;
+}
+
+.navbar-nav li a{
+	padding-top: 0px;
+}
+
+.navbar-nav i{
+	display: block;
+}
+
+.navbar-nav i:before{
+	font-size: 20px;
+}
+
+.navbar-nav li{
+	padding-top: 10px;
+}
+/*
+    background-color: #FF0000;
+    font-family: Oswald, Arial, Helvetica, sans-serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #FFF;
+    padding: 12px;
+    border-bottom: solid;
+    border-bottom-width: 5px;
+    border-bottom-color: #3a7aa6;
+    border-top: solid;
+    border-top-width: 5px;
+    border-top-color: #3a7aa6;
+    border-left: solid;
+    border-left-width: 5px;
+    border-left-color: #3a7aa6;
+    border-right: solid;
+    border-right-width: 5px;
+    border-right-color: #3a7aa6;
+	border-radius: 10px;
+	*/
