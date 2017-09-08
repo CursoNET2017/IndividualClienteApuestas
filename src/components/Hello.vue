@@ -3,9 +3,9 @@
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
-      <li><router-link exact to="/ApuestaMaestro"><i class="fa fa-list" aria-hidden="true"></i>Listado de apuestas</router-link></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
+      <li><router-link exact to="/ApuestaMaestro"><i class="fa fa-list" aria-hidden="true"></i> Listado de apuestas</router-link></li>
+      <li><a href="http://www.todo-apuestas.es/foro/" target="_blank">Forum</a></li>
+      <li><a href="http://www.todo-apuestas.es/foro/" target="_blank">Community Chat</a></li>
     </ul>
     
   </div>
@@ -16,7 +16,7 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Sports Bets'
     }
   }
 }
