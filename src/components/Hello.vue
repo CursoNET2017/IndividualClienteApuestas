@@ -4,6 +4,7 @@
     <h2>Essential Links</h2>
     <ul>
       <li><router-link exact to="/ApuestaMaestro"><i class="fa fa-list" aria-hidden="true"></i> Listado de apuestas</router-link></li>
+      <li><router-link exact to="/ApuestaDetalle"><i class="fa fa-search-plus" aria-hidden="true"></i> Detalle apuestas</router-link></li>
       <li><a href="http://www.todo-apuestas.es/foro/" target="_blank">Forum</a></li>
       <li><a href="http://www.todo-apuestas.es/foro/" target="_blank">Community Chat</a></li>
     </ul>

@@ -1,5 +1,5 @@
 <template>
-	<div class="container-fluid">
+	<!--<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-12">
 				<nav class="navbar navbar-default">
@@ -11,14 +11,26 @@
                                 <router-link exact to="/"></router-link>
 							</a>
 							<li><router-link exact to="/ApuestaMaestro"><i class="fa fa-money" aria-hidden="true"></i> Apuestas</router-link></li>
-							<!--<li><router-link exact to="/TareaMaestro"><i class="fa fa-list" aria-hidden="true"></i>Listado de tareas</router-link></li>
-							<li><router-link exact to="/EjecucionMaestro"><i class="fa fa-clock-o" aria-hidden="true"></i>Ejecuciones de tareas</router-link></li>-->
 						</ul>
 				  	</div>
 				</nav>
 			</div>	
 		</div>
-	</div>
+	</div>-->
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">
+					<img :src="cabeceraDatos.logo" :alt="cabeceraDatos.nombre"> <p>WebSiteName</p> 
+                    <router-link exact to="/"></router-link>
+				</a>
+				</div>
+				<ul class="nav navbar-nav">
+				<li><router-link exact to="/ApuestaMaestro"><i class="fa fa-money" aria-hidden="true"></i> Apuestas</router-link></li><!-- li class="active" -->
+				<li><router-link exact to="/ApuestaMaestro"><i class="fa fa-users" aria-hidden="true"></i> Usuarios</router-link></li>
+			</ul>
+		</div>
+	</nav>
 </template>
 
 <script src="./Cabecera.js" type="text/javascript" charset="utf-8"></script>

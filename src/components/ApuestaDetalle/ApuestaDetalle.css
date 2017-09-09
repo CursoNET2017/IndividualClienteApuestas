@@ -1,0 +1,23 @@
+#ApuestaDetalle {
+    text-align: center;
+    margin-top: 10%
+}
+#ApuestaDetalle h2{
+    text-align: center;
+    margin: 2%;
+}
+#ApuestaDetalle label {
+    text-align: left;
+}
+#boton_actualizar {
+    background-color: green;
+    color: white;
+}
+#boton_cancelar {
+    background-color: red;
+    color: white;
+}
+#boton_guardar {
+    background-color: green;
+    color: white;
+}
