@@ -29,13 +29,16 @@ export default {
     },
     filtrar(tipo) {
       var menues = $(".menu-content li");
+      var menues2 = $(".menu-content ul");
+      menues.addClass("collapsed");
       //var menues = $(".menu-content li");
       menues.removeClass('active');//Eliminamos los actives
       menues.attr("aria-expanded","false");
+      menues2.attr("aria-expanded","false");
       menues.click(function() {
         // activamos el elemento clicado.
         $(this).addClass("active");
-        $(this).attr("aria-expanded","true");
+        //$(this).attr("aria-expanded","true");
      });
       switch(tipo) {
         case 0:
@@ -59,6 +62,10 @@ export default {
     sacarDetalle: function (refer) {
       //console.log(refer)
       this.idSeleccionado = refer;
+      this.visibleCuerpo = false;
+    },
+    nuevoItem: function () {
+      this.idSeleccionado = undefined;
       this.visibleCuerpo = false;
     },
     cerrarDetalle: function () {

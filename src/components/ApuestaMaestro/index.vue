@@ -33,21 +33,21 @@
                   <a><i class="fa fa-gift fa-lg"></i> Baloncesto <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="baloncesto">
-                  <li v-for="item in items" v-bind:key="item.Id" v-if="item.Tipo==seleccion" v-on:click="sacarDetalle(item.Id)">
+                  <li v-for="item in items" v-bind:key="item.Id" v-if="item.Tipo==tipos.baloncesto" v-on:click="sacarDetalle(item.Id)">
                       {{item.Evento1}} Vs {{item.Evento2}}</li>
                 </ul>
                 <li data-toggle="collapse" data-target="#futbol" class="collapsed" v-on:click="filtrar(1)">
                   <a><i class="fa fa-futbol-o"></i> Futbol <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="futbol">
-                  <li v-for="item in items" v-bind:key="item.Id" v-if="item.Tipo==seleccion" v-on:click="sacarDetalle(item.Id)">
+                  <li v-for="item in items" v-bind:key="item.Id" v-if="item.Tipo==tipos.futbol" v-on:click="sacarDetalle(item.Id)">
                       {{item.Evento1}} Vs {{item.Evento2}}</li>
                 </ul>
                 <li data-toggle="collapse" data-target="#tenis" class="collapsed" v-on:click="filtrar(3)">
                   <a><i class="fa fa-car fa-lg"></i> Tenis <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="tenis">
-                  <li v-for="item in items" v-bind:key="item.Id" v-if="item.Tipo==seleccion" v-on:click="sacarDetalle(item.Id)">
+                  <li v-for="item in items" v-bind:key="item.Id" v-if="item.Tipo==tipos.tenis" v-on:click="sacarDetalle(item.Id)">
                       {{item.Evento1}} Vs {{item.Evento2}}</li>
                 </ul>
             </ul>
@@ -56,6 +56,9 @@
     <div id="cuerpo" class="container">
         <div id="porDefecto" v-if="visibleCuerpo">
             <h2>Apuestas Deportivas</h2>
+            <button id="insertar" @click="nuevoItem" class="btn btn-default">
+				<i class="fa fa-plus"></i> Inserción
+            </button>
             <ul class="list-group" v-for="tipo in tipos" v-bind:key="tipo">
                 <div v-show="seleccion == tipos || seleccion == tipo">
                 <h3>{{tipo}}</h3>
