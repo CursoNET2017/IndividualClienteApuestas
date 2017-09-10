@@ -1,10 +1,10 @@
 .navbar-header a{
 	padding-top: 7px;
 	padding-bottom: 7px;
-
+	
 }
 img{
-	margin-left: 25px;
+	margin-left: 30px;
 	width: 48px;
 }
 
@@ -30,4 +30,5 @@ img{
 	text-align: center;
 	position: fixed; /* Hacemos que la cabecera tenga una posición fija */
 	top: 0; /* Posicionamos la cabecera pegada arriba */
+	background-color: black;
 }

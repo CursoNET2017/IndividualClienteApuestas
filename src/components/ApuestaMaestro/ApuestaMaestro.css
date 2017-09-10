@@ -9,10 +9,6 @@
     width: 20%;
     height: 90%;
 }
-
-#ApuestaMaestro nav .btn-group-vertical {
-    width: 100%;
-}
 */
 #ApuestaMaestro #cuerpo  {  
     width: 80%;
@@ -38,7 +34,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     font-family: verdana;
     font-size: 12px;
     font-weight: 200;
-    background-color: #2e353d;
+    background-color: #211D1D;
     position: fixed;
     width:20%;
     height: 90%;
@@ -46,7 +42,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     margin-top: 10%;
   }
 .nav-side-menu .brand {
-  background-color: #23282e;
+  background-color: black;
   line-height: 50px;
   display: block;
   text-align: center;

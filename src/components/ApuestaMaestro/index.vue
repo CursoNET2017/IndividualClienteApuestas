@@ -27,7 +27,7 @@
         <div class="menu-list">  
             <ul id="menu-content" class="menu-content collapse out">
                 <li data-toggle="collapse"class="collapsed active" v-on:click="filtrar(0)">
-                  <a><i class="fa fa-gift fa-lg"></i> Todas</a>
+                  <a><i class="fa fa-asterisk fa-lg"></i> Todas</a>
                 </li>                
                 <li data-toggle="collapse" data-target="#baloncesto" class="collapsed" v-on:click="filtrar(2)">
                   <a><i class="fa fa-gift fa-lg"></i> Baloncesto <span class="arrow"></span></a>
@@ -37,7 +37,7 @@
                       {{item.Evento1}} Vs {{item.Evento2}}</li>
                 </ul>
                 <li data-toggle="collapse" data-target="#futbol" class="collapsed" v-on:click="filtrar(1)">
-                  <a><i class="fa fa-futbol-o"></i> Futbol <span class="arrow"></span></a>
+                  <a><i class="fa fa-futbol-o fa-lg"></i> Futbol <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="futbol">
                   <li v-for="item in items" v-bind:key="item.Id" v-if="item.Tipo==tipos.futbol" v-on:click="sacarDetalle(item.Id)">

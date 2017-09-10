@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <img src="../assets/apuestas.png" alt="cabeceraDatos.nombre">
     <h2>Essential Links</h2>
     <ul>
       <li><router-link exact to="/ApuestaMaestro"><i class="fa fa-list" aria-hidden="true"></i> Listado de apuestas</router-link></li>
@@ -25,10 +26,21 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.hello h1, h2 {
+.hello h1 {
   font-weight: normal;
   margin-top: 20%;
   text-align: center;
+}
+.hello h2 {
+  font-weight: normal;
+  text-align: center;
+}
+.hello img {
+  border-radius: 50%;
+  width:30%;
+  height: auto;
+  margin: auto;
+  display: block;
 }
 
 .hello ul {

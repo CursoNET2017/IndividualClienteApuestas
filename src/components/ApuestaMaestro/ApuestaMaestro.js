@@ -29,12 +29,12 @@ export default {
     },
     filtrar(tipo) {
       var menues = $(".menu-content li");
-      var menues2 = $(".menu-content ul");
-      menues.addClass("collapsed");
+      //var menues2 = $(".menu-content ul");
+      //menues.addClass("collapsed");
       //var menues = $(".menu-content li");
       menues.removeClass('active');//Eliminamos los actives
-      menues.attr("aria-expanded","false");
-      menues2.attr("aria-expanded","false");
+      //menues.attr("aria-expanded","false");
+      //menues2.attr("aria-expanded","false");
       menues.click(function() {
         // activamos el elemento clicado.
         $(this).addClass("active");
@@ -60,9 +60,17 @@ export default {
       }
     },
     sacarDetalle: function (refer) {
-      //console.log(refer)
-      this.idSeleccionado = refer;
-      this.visibleCuerpo = false;
+      if (this.idSeleccionado == undefined) {//Si no arreglo lo de volver a llamarlo. MIRAR WATCHERS
+        var menues2 = $(".menu-content ul li");
+        menues2.removeClass('active');//Eliminamos los actives
+        //console.log(refer)
+        this.idSeleccionado = refer;
+        this.visibleCuerpo = false;
+      } else {
+        this.idSeleccionado = undefined
+        this.visibleCuerpo = true;
+      }
+      
     },
     nuevoItem: function () {
       this.idSeleccionado = undefined;

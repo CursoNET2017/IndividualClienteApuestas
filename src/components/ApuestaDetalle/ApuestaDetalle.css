@@ -1,6 +1,6 @@
 #ApuestaDetalle {
     text-align: center;
-    margin-top: 10%
+    margin-top: 5%
 }
 #ApuestaDetalle h2{
     text-align: center;
@@ -10,14 +10,29 @@
     text-align: left;
 }
 #boton_actualizar {
-    background-color: green;
+    background-color: #0F800F;
     color: white;
 }
 #boton_cancelar {
+    background-color: #FF8000;
+    color: white;
+}
+#boton_eliminar {
     background-color: red;
     color: white;
 }
 #boton_guardar {
-    background-color: green;
+    background-color: #0F800F;
     color: white;
+}
+#ApuestaDetalle .ayudaInput {
+    height: 20px;
+    margin-left: 5px;
+    text-align: left;
+}
+#ApuestaDetalle .ayudaInput small {
+    color: red;
+}
+.claseError {
+    border-color: red;
 }
