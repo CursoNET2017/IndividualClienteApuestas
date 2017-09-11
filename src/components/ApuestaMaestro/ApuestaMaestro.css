@@ -1,15 +1,3 @@
-/*
-#ApuestaMaestro nav {
-    margin-left: 0;
-    border: 1px solid #cccccc;
-    border-top-left-radius: 0.5em;
-    border-top-right-radius: 0.5em;
-    padding-top: 1ex;
-    display: block;
-    width: 20%;
-    height: 90%;
-}
-*/
 #ApuestaMaestro #cuerpo  {  
     width: 80%;
     float: right;
@@ -29,6 +17,8 @@ th {
 }
 
 tr:nth-child(even){background-color: #f2f2f2}
+tr:hover{background-color: #A9DE9E}
+
 .nav-side-menu {
     overflow: auto;
     font-family: verdana;

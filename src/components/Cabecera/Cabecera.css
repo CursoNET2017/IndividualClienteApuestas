@@ -31,4 +31,8 @@ img{
 	position: fixed; /* Hacemos que la cabecera tenga una posición fija */
 	top: 0; /* Posicionamos la cabecera pegada arriba */
 	background-color: black;
+	z-index: 1000;/*Cabecera por encima de todo*/
+}
+.router-link-active {
+	background-color: #221D1D !important;
 }

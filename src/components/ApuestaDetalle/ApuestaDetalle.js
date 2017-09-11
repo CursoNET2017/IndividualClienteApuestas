@@ -43,6 +43,7 @@ export default {
           isValido = false;
         };
         if (!/^([0-9])+[-][0-9]+$/.test(this.filtrada.AResultado)) {
+          console.log('Resultado'+this.filtrada.AResultado)
           this.valido.h = false;
           isValido = false;
         };
@@ -119,7 +120,7 @@ export default {
       actualizar: function () {
         let id1 = this.filtrada.Id;
         let _this = this;
-        if (this.validar) {
+        if (this.validar()) {
           bootbox.confirm({
             message: "¿Esta seguro de querer modificar la apuesta?",
             buttons: {

@@ -27,7 +27,7 @@
 				</div>
 				<ul class="nav navbar-nav">
 				<li><router-link exact to="/ApuestaMaestro"><i class="fa fa-money" aria-hidden="true"></i> Apuestas</router-link></li><!-- li class="active" -->
-				<li><router-link exact to="/ApuestaMaestro"><i class="fa fa-users" aria-hidden="true"></i> Usuarios</router-link></li>
+				<li><router-link exact to="/UsuarioMaestro"><i class="fa fa-users" aria-hidden="true"></i> Usuarios</router-link></li>
 			</ul>
 		</div>
 	</nav>

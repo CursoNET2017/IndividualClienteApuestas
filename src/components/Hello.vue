@@ -6,6 +6,12 @@
     <ul>
       <li><router-link exact to="/ApuestaMaestro"><i class="fa fa-list" aria-hidden="true"></i> Listado de apuestas</router-link></li>
       <li><router-link exact to="/ApuestaDetalle"><i class="fa fa-search-plus" aria-hidden="true"></i> Detalle apuestas</router-link></li>
+    </ul>
+    <ul>
+      <li><router-link exact to="/UsuarioMaestro"><i class="fa fa-users" aria-hidden="true"></i> Listado de usuarios</router-link></li>
+      <li><router-link exact to="/UsuarioDetalle"><i class="fa fa-user" aria-hidden="true"></i> Detalle usuarios</router-link></li>
+    </ul>
+    <ul>
       <li><a href="http://www.todo-apuestas.es/foro/" target="_blank">Forum</a></li>
       <li><a href="http://www.todo-apuestas.es/foro/" target="_blank">Community Chat</a></li>
     </ul>
