@@ -39,7 +39,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     width:20%;
     height: 90%;
     color: #e1ffff;
-    margin-top: 10%;
+    margin-top: 65px;
   }
 .nav-side-menu .brand {
   background-color: black;
@@ -151,6 +151,12 @@ tr:nth-child(even){background-color: #f2f2f2}
     font-size: 22px;
     padding-left: 20px;
     line-height: 50px !important;
+  }
+  #ApuestaMaestro #cuerpo  {  
+    width: 100%;
+    margin:0;
+    text-align: center;
+    margin-top: 10%;
   }
 }
 @media (min-width: 767px) {

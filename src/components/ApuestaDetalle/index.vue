@@ -9,14 +9,14 @@
 						<div class="form-group">
 						   	<label class="col-xs-3">Deporte: </label>
             				<div class="col-xs-9">
-                                <select v-model="filtrada.Tipo" class="form-control" aria-label="Tipo">
+                                <select v-model="filtrada.TipoDeporte" class="form-control" aria-label="TipoDeporte" v-bind:class="{claseError: !valido.a}">
                                     <option disabled value="">Seleccione una categoría</option>
 									<option v-for="tipo in tipos" v-bind:key="tipo.Id">{{tipo}}</option>
                                     <!--<option>Baloncesto</option>
                                     <option>Futbol</option>
                                     <option>Tenis</option>-->
                                 </select>
-								<div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted"> Seleccione uno.</small></div>
+								<div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.a"> Seleccione uno.</small></div>
 						  	</div>
 						</div>
 					</div>
@@ -26,15 +26,15 @@
 						<div class="form-group">
 							<label class="col-xs-3">Evento: </label>
 							<div class="col-xs-4">
-						  		<input v-model="filtrada.Evento1" type="text" class="form-control" aria-label="Evento">
-								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted"> 1 a 30 caracteres.</small></div>
+						  		<input v-model="filtrada.Evento1" type="text" class="form-control" aria-label="Evento" v-bind:class="{claseError: !valido.b}">
+								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.b"> 1 a 30 caracteres.</small></div>
 						  	</div>
                             <div class="col-xs-1">
 						  		<label>Vs</label>
 						  	</div>
                             <div class="col-xs-4">
-						  		<input v-model="filtrada.Evento2" type="text" class="form-control" aria-label="Evento">
-								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted"> Entre 1 y 30 caracteres.</small></div>
+						  		<input v-model="filtrada.Evento2" type="text" class="form-control" aria-label="Evento" v-bind:class="{claseError: !valido.c}">
+								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.c"> Entre 1 y 30 caracteres.</small></div>
 						  	</div>
 						</div>
 					</div>
@@ -44,8 +44,8 @@
 						<div class="form-group">
 						   	<label class="col-xs-3">Fecha: </label>
             				<div class="col-xs-9">
-						  		<input v-model="filtrada.Fecha" type="date" class="form-control" aria-label="Fecha" >
-								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted"> Fecha no válida.</small></div>
+						  		<input v-model="filtrada.Fecha" type="date" class="form-control" aria-label="Fecha" v-bind:class="{claseError: !valido.d}">
+								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.d"> Fecha no válida.</small></div>
 						  	</div>
 						</div>
 					</div>
@@ -55,8 +55,8 @@
 						<div class="form-group">
 						   	<label class="col-xs-3">Pronostico: </label>
             				<div class="col-xs-9">
-						  		<input v-model="filtrada.Pronostico" type="text" class="form-control" aria-label="Pronostico" >
-								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted"> Máximo 50 caracteres.</small></div>
+						  		<input v-model="filtrada.Pronostico" type="text" class="form-control" aria-label="Pronostico" v-bind:class="{claseError: !valido.e}">
+								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.e"> Máximo 50 caracteres.</small></div>
 						  	</div>
 						</div>
 					</div>
@@ -66,8 +66,8 @@
 						<div class="form-group">
 							<label class="col-xs-3">Cuota: </label>
 							<div class="col-xs-9">
-						  		<input v-model="filtrada.Cuota" type="text" class="form-control" aria-label="Cuota" >
-								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted"> Tiene que ser 1 ó mayor.</small></div>
+						  		<input v-model="filtrada.Cuota" type="text" class="form-control" aria-label="Cuota" v-bind:class="{claseError: !valido.f}">
+								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.f"> Tiene que ser 1 ó mayor.</small></div>
 						  	</div>
 						</div>
 					</div>
@@ -77,8 +77,8 @@
 						<div class="form-group">
 						   	<label class="col-xs-3">Vencedor: </label>
             				<div class="col-xs-9">
-						  		<input v-model="filtrada.AVencedor" type="text" class="form-control" aria-label="AVencedor" >
-								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted"> Uno de los dos participantes</small></div>
+						  		<input v-model="filtrada.AVencedor" type="text" class="form-control" aria-label="AVencedor" v-bind:class="{claseError: !valido.g}">
+								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.g"> Uno de los dos participantes</small></div>
 						  	</div>
 						</div>
 					</div>
@@ -88,8 +88,8 @@
 						<div class="form-group">
 							<label class="col-xs-3">Resultado: </label>
 							<div class="col-xs-9">
-						  		<input v-model="filtrada.AResultado" type="text" class="form-control" aria-label="AResultado" >
-								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted"> Formato: Número-Número</small></div>
+						  		<input v-model="filtrada.AResultado" type="text" class="form-control" aria-label="AResultado" v-bind:class="{claseError: !valido.h}">
+								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.h"> Formato: Número-Número</small></div>
 						  	</div>
 						</div>
 					</div>
@@ -99,8 +99,8 @@
 						<div class="form-group">
 							<label class="col-xs-3">Cantidad(€):</label>
 							<div class="col-xs-9">
-						  		<input v-model="filtrada.Cantidad" type="text" class="form-control" aria-label="Cantidad" >
-								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted"> Número positivo.</small></div>
+						  		<input v-model="filtrada.Cantidad" type="text" class="form-control" aria-label="Cantidad" v-bind:class="{claseError: !valido.i}">
+								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.i"> Número positivo.</small></div>
 						  	</div>
 						</div>
 					</div>
@@ -110,8 +110,8 @@
 						<div class="form-group">
 							<label class="col-xs-3">Usuario: </label>
 							<div class="col-xs-9">
-						  		<input v-model="filtrada.DNIUsuario" type="text" class="form-control" aria-label="DNIUsuario" >
-								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted"> DNI no válido.</small></div>
+						  		<input v-model="filtrada.DNIUsuario" type="text" class="form-control" aria-label="DNIUsuario" v-bind:class="{claseError: !valido.j}">
+								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.j"> DNI no válido.</small></div>
 						  	</div>
 						</div>
 					</div>

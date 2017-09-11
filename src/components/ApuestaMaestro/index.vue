@@ -33,21 +33,21 @@
                   <a><i class="fa fa-gift fa-lg"></i> Baloncesto <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="baloncesto">
-                  <li v-for="item in items" v-bind:key="item.Id" v-if="item.Tipo==tipos.baloncesto" v-on:click="sacarDetalle(item.Id)">
+                  <li v-for="item in items" v-bind:key="item.Id" v-if="item.TipoDeporte==tipos.baloncesto" v-on:click="sacarDetalle(item.Id)">
                       {{item.Evento1}} Vs {{item.Evento2}}</li>
                 </ul>
                 <li data-toggle="collapse" data-target="#futbol" class="collapsed" v-on:click="filtrar(1)">
                   <a><i class="fa fa-futbol-o fa-lg"></i> Futbol <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="futbol">
-                  <li v-for="item in items" v-bind:key="item.Id" v-if="item.Tipo==tipos.futbol" v-on:click="sacarDetalle(item.Id)">
+                  <li v-for="item in items" v-bind:key="item.Id" v-if="item.TipoDeporte==tipos.futbol" v-on:click="sacarDetalle(item.Id)">
                       {{item.Evento1}} Vs {{item.Evento2}}</li>
                 </ul>
                 <li data-toggle="collapse" data-target="#tenis" class="collapsed" v-on:click="filtrar(3)">
                   <a><i class="fa fa-car fa-lg"></i> Tenis <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="tenis">
-                  <li v-for="item in items" v-bind:key="item.Id" v-if="item.Tipo==tipos.tenis" v-on:click="sacarDetalle(item.Id)">
+                  <li v-for="item in items" v-bind:key="item.Id" v-if="item.TipoDeporte==tipos.tenis" v-on:click="sacarDetalle(item.Id)">
                       {{item.Evento1}} Vs {{item.Evento2}}</li>
                 </ul>
             </ul>
@@ -69,7 +69,7 @@
                         <th>Cuota</th>
                         <th>Pronostico</th>
                     </tr>
-                    <tr v-for="item in items" v-bind:key="item.Id" v-if="item.Tipo==tipo" v-on:click="sacarDetalle(item.Id)">
+                    <tr v-for="item in items" v-bind:key="item.Id" v-if="item.TipoDeporte==tipo" v-on:click="sacarDetalle(item.Id)">
                         <td>{{item.Fecha}}</td>
                         <td>{{item.Evento1}} Vs {{item.Evento2}}</td>
                         <td>{{item.Cuota}}</td>
