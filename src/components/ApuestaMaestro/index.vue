@@ -82,7 +82,7 @@
                 </div>
             </ul>
         </div>
-        <detalle v-else v-bind:idSeleccionado="idSeleccionado" v-on:cerrar="cerrarDetalle" v-on:recarga="getTodos"></detalle>
+        <detalle v-else v-bind:idSeleccionado="idSeleccionado" v-bind:tipos="tipos" v-on:cerrar="cerrarDetalle" v-on:recarga="getTodos"></detalle>
     </div>
 </div>
 </template>

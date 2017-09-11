@@ -11,9 +11,10 @@
             				<div class="col-xs-9">
                                 <select v-model="filtrada.Tipo" class="form-control" aria-label="Tipo">
                                     <option disabled value="">Seleccione una categoría</option>
-                                    <option>Baloncesto</option>
+									<option v-for="tipo in tipos" v-bind:key="tipo.Id">{{tipo}}</option>
+                                    <!--<option>Baloncesto</option>
                                     <option>Futbol</option>
-                                    <option>Tenis</option>
+                                    <option>Tenis</option>-->
                                 </select>
 								<div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted"> Seleccione uno.</small></div>
 						  	</div>

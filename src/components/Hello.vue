@@ -26,9 +26,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 .hello h1 {
   font-weight: normal;
-  margin-top: 20%;
+  margin-top: 190px;
   text-align: center;
 }
 .hello h2 {

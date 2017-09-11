@@ -1,6 +1,6 @@
 export default {
   name: 'TipoDetalle',
-  props: ['idSeleccionado'],
+  props: ['idSeleccionado', 'tipos'],
   data() {
     return {
       filtrada: {},

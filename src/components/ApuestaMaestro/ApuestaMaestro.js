@@ -17,7 +17,7 @@ export default {
       let _this = this
       $.ajax({
         type: 'GET',
-        url: 'http://localhost:53721/api/Apuestas',   
+        url: 'http://localhost:53721/api/Apuestas',
         success: function (response) {
           _this.items = JSON.parse(JSON.stringify(response))
         },
