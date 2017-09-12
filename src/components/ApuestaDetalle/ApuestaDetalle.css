@@ -1,6 +1,10 @@
 #ApuestaDetalle {
     text-align: center;
-    margin-top: 5%
+    margin-top: 5%;
+}
+#ApuestaDetalle #vs{/*Que no se desmonte el label Vs*/
+    padding-right: 0px;
+    padding-left: 0px;
 }
 #ApuestaDetalle h2{
     text-align: center;
@@ -12,6 +16,7 @@
 #boton_actualizar {
     background-color: #0F800F;
     color: white;
+    float: right;
 }
 #boton_cancelar {
     background-color: #FF8000;
@@ -20,10 +25,12 @@
 #boton_eliminar {
     background-color: red;
     color: white;
+    float: left;
 }
 #boton_guardar {
     background-color: #0F800F;
     color: white;
+    float: right;
 }
 #ApuestaDetalle .ayudaInput {
     height: 20px;
@@ -35,4 +42,7 @@
 }
 .claseError {
     border-color: red;
+}
+#boton_cancelar {
+    float: right;
 }

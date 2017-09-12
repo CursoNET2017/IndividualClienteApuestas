@@ -13,53 +13,39 @@ export default {
         validar: function () {
           this.valido = {a: true, b: true, c: true, d: true, e: true, f: true, g: true};
           let isValido = true;
-          /*
-          if (this.filtrada.TipoDeporte == null) {
+          
+          if (!(this.filtrada.Nombre != null && this.filtrada.Nombre.length > 0 && this.filtrada.Nombre.length <= 30)) {
             this.valido.a = false;
             isValido = false;
           };
-          if (!(this.filtrada.Evento1 != null && this.filtrada.Evento1.length > 0 && this.filtrada.Evento1.length <= 30)) {
+          if (!(this.filtrada.Apellidos != null && this.filtrada.Apellidos.length > 0 && this.filtrada.Apellidos.length <= 50)) {
             this.valido.b = false;
             isValido = false;
           };
-          if (!(this.filtrada.Evento2 != null && this.filtrada.Evento2.length > 0 && this.filtrada.Evento2.length <= 30)) {
+          if (!/^[0-9]{8}[A-Z]$/.test(this.filtrada.DNI)) {
             this.valido.c = false;
             isValido = false;
-          };
-          if(!!this.filtrada.Fecha == false){
+          };/*
+          if (!/^[A-Za-z0-9]+[@][a-z]+[.][a-z]$/.test(this.filtrada.Email)) {
             this.valido.d = false;
             isValido = false;
-          }else if (isNaN(Date.parse(this.filtrada.Fecha.split('/').reverse().join('-')))) {
-            this.valido.d = false;
-            isValido = false;
-          };
-          if (!(this.filtrada.Pronostico != null && this.filtrada.Pronostico.length > 0 && this.filtrada.Pronostico.length <= 50)) {
+          };*/
+          if (!(this.filtrada.Nick != null && this.filtrada.Nick.length > 0 && this.filtrada.Nick.length <= 30)) {
             this.valido.e = false;
             isValido = false;
           };
-          if (!/^([0-9])*[.]?[0-9]*$/.test(this.filtrada.Cuota)) {
+          /*
+          if (contraseñaslajdñasodñaso) {
             this.valido.f = false;
             isValido = false;
-          };
-          if (!(this.filtrada.AVencedor != null && this.filtrada.AVencedor == this.filtrada.Evento1 || this.filtrada.AVencedor ==this.filtrada.Evento2)) {
-            this.valido.g = false;
-            isValido = false;
-          };
-          if (!/^([0-9])+[-][0-9]+$/.test(this.filtrada.AResultado)) {
-            console.log('Resultado'+this.filtrada.AResultado)
+          };*/
+          /*
+          if () {
             this.valido.h = false;
             isValido = false;
-          };
-          if (!/^([0-9])*[.]?[0-9]*$/.test(this.filtrada.Cantidad)) {
-            this.valido.i = false;
-            isValido = false;
-          };
-          if (!/^[0-9]{8}[A-Z]$/.test(this.filtrada.DNIUsuario)) {
-            this.valido.j = false;
-            isValido = false;
-          };
+          };*/
           //console.log('Sale: '+isValido)
-          */
+          
           return isValido;
         },
         mensaje: function () {
@@ -77,7 +63,7 @@ export default {
               data: _this.filtrada,
               success: function (response) {
                   //alert('Creado evento '+_this.filtrada.Evento1+' VS '+_this.filtrada.Evento2);
-                  _this.visibleBorrado();
+                  _this.cancelar();
                   //_this.actulizarPadre();//Actualizar listado maestro
               },
               error: function(xhr, textStatus, errorThrown){
@@ -90,17 +76,12 @@ export default {
             });
           } else {
             this.mensaje();
-          }        
-        },
-        visibleBorrado: function () {
-            this.filtrada={};
+          }
         },
         cancelar: function () {
-          //this.validar();
-          //this.idSeleccionado = undefined;
-          this.tipoFiltrada = {};        
-          //this.$emit('cerrar');//HACER QUE VUELVA AL PADRE
-          this.$router.push('/UsuarioMaestro');
+          this.validar();
+          //this.tipoFiltrada = {};        
+          //this.$router.push('/UsuarioMaestro');
         },
         /*actulizarPadre: function () {
           this.$emit('recarga');//ACTUALIZAR LISTADO PADRE
@@ -113,7 +94,7 @@ export default {
                 url: 'http://localhost:53721/api/Usuarios/'+id1,
                 type: 'GET',     
                 success: function(response) {
-                alert('YUPII');
+                //alert('YUPII');
                 //_this.editable = true;
                 _this.filtrada = JSON.parse(JSON.stringify(response));
                 },
@@ -129,7 +110,7 @@ export default {
           let _this = this;
           if (this.validar()) {
             bootbox.confirm({
-              message: "¿Esta seguro de querer modificar la apuesta?",
+              message: "¿Esta seguro de querer modificar el usuario?",
               buttons: {
                   confirm: {
                       label: 'Actualizar',
@@ -170,7 +151,7 @@ export default {
           let _this = this;
           if (this.validar()) {
             bootbox.confirm({
-              message: "¿Esta seguro de querer modificar la apuesta?",
+              message: "¿Esta seguro de querer modificar el usuario?",
               buttons: {
                   confirm: {
                       label: 'Actualizar',
@@ -204,5 +185,8 @@ export default {
             this.mensaje();
          }
         }
+    },
+    created: function () {
+      this.cargarItem()
     }
   }

@@ -4,10 +4,14 @@ export default {
   data() {
     return {
       filtrada: {},
-      valido: {a: true, b: true, c: true, d: true, e: true, f: true, g: true, h: true, i: true, j: true}
+      valido: {a: true, b: true, c: true, d: true, e: true, f: true, g: true, h: true, i: true, j: true},
+      editable: true
     }
   },
   methods: {
+      editar: function () {
+        this.editable = !this.editable;
+      },
       validar: function () {
         this.valido = {a: true, b: true, c: true, d: true, e: true, f: true, g: true, h: true, i: true, j: true};
         let isValido = true;
@@ -94,7 +98,7 @@ export default {
       },
       cancelar: function () {
         //this.validar();
-        //this.idSeleccionado = undefined;
+        this.idSeleccionado = undefined;
         this.tipoFiltrada = {};        
         this.$emit('cerrar');//HACER QUE VUELVA AL PADRE
       },
@@ -189,6 +193,8 @@ export default {
       //console.log('Id....  '+this.idSeleccionado)
     if (this.idSeleccionado!=undefined) {
         this.cargarItem(this.idSeleccionado);
+    } else {
+      this.editable = false;
     }
   }
 }

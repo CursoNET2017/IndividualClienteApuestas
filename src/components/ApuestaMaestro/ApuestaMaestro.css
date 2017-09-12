@@ -1,9 +1,9 @@
-#ApuestaMaestro #cuerpo  {  
+#ApuestaMaestro #porDefecto  {  
     width: 80%;
     float: right;
     margin:0;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 th, td {
   text-align: left;
@@ -146,7 +146,7 @@ tr:hover{background-color: #A9DE9E}
     width: 100%;
     margin:0;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
   }
 }
 @media (min-width: 767px) {

@@ -1,9 +1,9 @@
-#UsuarioMaestro #cuerpo  {  
+#UsuarioMaestro {  
     width: 100%;
     float: right;
     margin:0;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 th, td {
   text-align: left;
@@ -15,6 +15,18 @@ th {
   background-color: #4CAF50;
   color: white;
 }
+#UsuarioMaestro #insertar {
+  margin-block-end: 2%;
+}
 
 tr:nth-child(even){background-color: #f2f2f2}
 tr:hover{background-color: #A9DE9E}
+
+@media (max-width: 767px) {
+  #UsuarioMaestro #cuerpo  {  
+    width: 100%;
+    margin:0;
+    text-align: center;
+    margin-top: 190px;
+  }
+}

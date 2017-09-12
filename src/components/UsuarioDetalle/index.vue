@@ -34,8 +34,8 @@
 						<div class="form-group">
 						   	<label class="col-xs-3">Apellidos: </label>
             				<div class="col-xs-9">
-						  		<input v-model="filtrada.Apellidos" type="text" class="form-control" aria-label="Apellidos" v-bind:class="{claseError: !valido.d}">
-								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.d"> 1 a 30 caracteres.</small></div>
+						  		<input v-model="filtrada.Apellidos" type="text" class="form-control" aria-label="Apellidos" v-bind:class="{claseError: !valido.b}">
+								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.b"> 1 a 50 caracteres.</small></div>
 						  	</div>
 						</div>
 					</div>
@@ -111,18 +111,20 @@
 						<div class="form-group">
 							<div class="col-xs-3"></div>
 							<div class="col-xs-9">
-								<button id="boton_eliminar" class="btn btn-default" v-on:click="eliminar" v-if="filtrada.Id">
-									<i class="fa fa-trash"></i> Eliminar
-								</button>
-								<button id="boton_cancelar" class="btn btn-default" v-on:click="cancelar">
-									<i class="fa fa-times"></i> Cancelar
-								</button>
-								<button id="boton_actualizar" class="btn btn-default" v-on:click="actualizar" v-if="filtrada.Id">
-									<i class="fa fa-undo"></i> Actualizar
-								</button>
-								<button id="boton_guardar" class="btn btn-default" v-on:click="guardar" v-if="!filtrada.Id">
-									<i class="fa fa-floppy-o"></i> Guardar
-								</button>
+								<div class="btn-group" role="group" aria-label="">
+									<button id="boton_eliminar" class="btn btn-default" v-on:click="eliminar" v-if="filtrada.Id">
+										<i class="fa fa-trash"></i> Eliminar
+									</button>
+									<button id="boton_cancelar" class="btn btn-default" v-on:click="cancelar">
+										<i class="fa fa-times"></i> Cancelar
+									</button>
+									<button id="boton_actualizar" class="btn btn-default" v-on:click="actualizar" v-if="filtrada.Id">
+										<i class="fa fa-undo"></i> Actualizar
+									</button>
+									<button id="boton_guardar" class="btn btn-default" v-on:click="guardar" v-if="!filtrada.Id">
+										<i class="fa fa-floppy-o"></i> Guardar
+									</button>
+								</div>
 						  	</div>
 						</div>
 					</div>					
