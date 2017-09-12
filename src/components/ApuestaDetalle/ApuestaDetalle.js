@@ -98,7 +98,7 @@ export default {
       },
       cancelar: function () {
         //this.validar();
-        this.idSeleccionado = undefined;
+        //this.idSeleccionado = undefined;
         this.tipoFiltrada = {};        
         this.$emit('cerrar');//HACER QUE VUELVA AL PADRE
       },
@@ -165,18 +165,37 @@ export default {
       eliminar: function () {
         let id1 = this.filtrada.Id;
         let _this = this;
-        $.ajax({
-          type: 'DELETE',
-          url: 'http://localhost:53721/api/Apuestas/'+id1,
-          success: function () {
-              _this.actulizarPadre();//Actualizar listado maestro
-              _this.cancelar();
+        bootbox.confirm({
+          message: "¿Esta seguro de querer eliminar la apuesta?",
+          buttons: {
+              confirm: {
+                  label: 'Eliminar',
+                  className: 'btn-success'
+              },
+              cancel: {
+                  label: 'Cancelar',
+                  className: 'btn-danger'
+              }
           },
-          error : function(xhr, textStatus, errorThrown){
-              alert("Error actualizar: " + errorThrown + " --> " + xhr.responseText);
-              debugger;
+          callback: function (result) {
+            if (result) {
+              $.ajax({
+                type: 'DELETE',
+                url: 'http://localhost:53721/api/Apuestas/'+id1,
+                success: function () {
+                    _this.actulizarPadre();//Actualizar listado maestro
+                    _this.cancelar();
+                },
+                error : function(xhr, textStatus, errorThrown){
+                    alert("Error actualizar: " + errorThrown + " --> " + xhr.responseText);
+                    debugger;
+                }
+              });
+            } else {
+              _this.cancelar();
+            }
           }
-      });
+        });
       }
 
 
