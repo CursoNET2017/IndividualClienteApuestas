@@ -43,7 +43,7 @@ export default {
           isValido = false;
         };
         if (!/^([0-9])+[-][0-9]+$/.test(this.filtrada.AResultado)) {
-          console.log('Resultado'+this.filtrada.AResultado)
+          //console.log('Resultado'+this.filtrada.AResultado)
           this.valido.h = false;
           isValido = false;
         };
@@ -55,7 +55,7 @@ export default {
           this.valido.j = false;
           isValido = false;
         };
-        console.log('Sale: '+isValido)
+        //console.log('Sale: '+isValido)
         return isValido;
       },
       mensaje: function () {
