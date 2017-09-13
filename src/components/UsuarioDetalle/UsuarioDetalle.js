@@ -26,12 +26,11 @@ export default {
           this.valido.b = false;
           isValido = false;
         };
-        if (!/^[0-9]{8}[A-Z]$/.test(this.filtrada.DNI)) {
+        if (!/^[0-9A-Z][0-9]{7}[A-Z]$/.test(this.filtrada.DNI)) {
           this.valido.c = false;
           isValido = false;
         };
         if (!/^[_A-Za-z0-9]+[@][A-Za-z0-9]+[.][A-Za-z]{2,}$/.test(this.filtrada.Email)) {
-          //console.log('Email: '+this.filtrada.Email)
           this.valido.d = false;
           isValido = false;
         };
@@ -45,12 +44,9 @@ export default {
           isValido = false;
         };
         if (!/^[A-Z]{2}[0-9]{22}$/.test(this.filtrada.Cuenta)) {
-          //console.log('Cuenta: '+this.filtrada.Cuenta)
           this.valido.g = false;
           isValido = false;
-        };
-        //console.log('Sale: '+isValido)
-        
+        };        
         return isValido;
       },
       mensaje: function () {
@@ -67,16 +63,11 @@ export default {
             url: 'http://localhost:53721/api/Usuarios',
             data: _this.filtrada,
             success: function (response) {
-                //alert('Creado evento '+_this.filtrada.Evento1+' VS '+_this.filtrada.Evento2);
                 _this.cancelar();
-                //_this.actulizarPadre();//Actualizar listado maestro
             },
             error: function(xhr, textStatus, errorThrown){
                 alert("Error guardar: " + errorThrown + " --> " + xhr.responseText);
                 debugger;
-            },        
-            complete: function(xhr, status) {		        
-                //_this.getTodos();
             }
           });
         } else {
@@ -84,13 +75,9 @@ export default {
         }
       },
       cancelar: function () {
-        //this.validar();
         this.tipoFiltrada = {};        
         this.$router.push('/UsuarioMaestro');
       },
-      /*actulizarPadre: function () {
-        this.$emit('recarga');//ACTUALIZAR LISTADO PADRE
-      },*/
       cargarItem: function () {
         let _this = this;
         let id1 = this.$route.params.id;
@@ -99,8 +86,6 @@ export default {
               url: 'http://localhost:53721/api/Usuarios/'+id1,
               type: 'GET',     
               success: function(response) {
-              //alert('YUPII');
-              //_this.editable = true;
               _this.filtrada = JSON.parse(JSON.stringify(response));
               },
               error: function(xhr, textStatus, errorThrown){
@@ -136,7 +121,6 @@ export default {
                   dataType : 'json',
                   data: _this.filtrada,
                   success : function(response) {                
-                      //_this.actulizarPadre();//Actualizar listado maestro
                       _this.cancelar();
                   },
                   error : function(xhr, textStatus, errorThrown){
@@ -174,7 +158,6 @@ export default {
                     type: 'DELETE',
                     url: 'http://localhost:53721/api/Usuarios/'+id1,
                     success: function () {
-                        //_this.actulizarPadre();//Actualizar listado maestro
                         _this.cancelar();
                     },
                     error : function(xhr, textStatus, errorThrown){

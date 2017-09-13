@@ -47,7 +47,6 @@ export default {
           isValido = false;
         };
         if (!/^([0-9])+[-][0-9]+$/.test(this.filtrada.AResultado)) {
-          //console.log('Resultado'+this.filtrada.AResultado)
           this.valido.h = false;
           isValido = false;
         };
@@ -55,11 +54,10 @@ export default {
           this.valido.i = false;
           isValido = false;
         };
-        if (!/^[0-9]{8}[A-Z]$/.test(this.filtrada.DNIUsuario)) {
+        if (!/^[0-9A-Z][0-9]{7}[A-Z]$/.test(this.filtrada.DNIUsuario)) {
           this.valido.j = false;
           isValido = false;
         };
-        //console.log('Sale: '+isValido)
         return isValido;
       },
       mensaje: function () {
@@ -75,18 +73,13 @@ export default {
             type: 'POST',
             url: 'http://localhost:53721/api/Apuestas',
             data: _this.filtrada,
-            //data: {TipoDeporte: _this.filtrada.TipoDeporte, Cuota: _this.filtrada.Cuota, Fecha: _this.filtrada.Fecha, Evento1: _this.filtrada.Evento1, Evento2: _this.filtrada.Evento2, Pronostico: _this.filtrada.Pronostico, DNIUsuario: _this.filtrada.DNIUsuario, AResultado: _this.filtrada.AResultado, AVencedor: _this.filtrada.AVencedor, Cantidad: _this.filtrada.Cantidad},
             success: function (response) {
-                //alert('Creado evento '+_this.filtrada.Evento1+' VS '+_this.filtrada.Evento2);
                 _this.visibleBorrado();
                 _this.actulizarPadre();//Actualizar listado maestro
             },
             error: function(xhr, textStatus, errorThrown){
                 alert("Error guardar: " + errorThrown + " --> " + xhr.responseText);
                 debugger;
-            },        
-            complete: function(xhr, status) {		        
-                //_this.getTodos();
             }
           });
         } else {
@@ -97,8 +90,6 @@ export default {
           this.filtrada={};
       },
       cancelar: function () {
-        //this.validar();
-        //this.idSeleccionado = undefined;
         this.tipoFiltrada = {};        
         this.$emit('cerrar');//HACER QUE VUELVA AL PADRE
       },
@@ -111,8 +102,6 @@ export default {
             url: 'http://localhost:53721/api/Apuestas/'+idSeleccionado,
             type: 'GET',     
             success: function(response) {
-            //alert('YUPII');
-            //_this.editable = true;
             _this.filtrada = JSON.parse(JSON.stringify(response));
             },
             error: function(xhr, textStatus, errorThrown){
@@ -200,16 +189,8 @@ export default {
 
 
 
-  },
-  /*watch: function () {
-    idSeleccionado: function () {
-      this.cargarItem(this.idSeleccionado);
-    }
-    
-  },*/
+  }, 
   mounted: function () {
-    //this.filtrada = this.item;
-      //console.log('Id....  '+this.idSeleccionado)
     if (this.idSeleccionado!=undefined) {
         this.cargarItem(this.idSeleccionado);
     } else {

@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!--<img src="./assets/logo.png">-->
     <cabecera :cabeceraDatos="cabeceraDatos"></cabecera>
     <router-view></router-view>
   </div>

@@ -3,30 +3,21 @@
         <div class="container-fluid">			
 			<form v-on:submit.prevent="">
 				<h2>{{!filtrada.Id?"Insertar nuevo usuario":"Detalle del usuario"}}</h2>
-				<button id="boton_editar" class="btn btn-default" v-if="filtrada.Id" v-on:click="editar">
-					<i class="fa fa-pencil"></i> Editar
-				</button>
-				<br/>
-			   <!--<div class="row">
-			        <div class="col-xs-12 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">  
+				<div class="row">    
+			        <div class="col-xs-12 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">		
 						<div class="form-group">
-						   	<label class="col-xs-3">Deporte: </label>
-            				<div class="col-xs-9">
-                                <select v-model="filtrada.TipoDeporte" class="form-control" aria-label="TipoDeporte" v-bind:class="{claseError: !valido.a}">
-                                    <option disabled value="">Seleccione una categoría</option>
-									<option v-for="tipo in tipos" v-bind:key="tipo.Id">{{tipo}}</option>
-                                </select>
-								<div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.a"> Seleccione uno.</small></div>
-						  	</div>
+							<button id="boton_editar" class="btn btn-default" v-if="filtrada.Id" v-on:click="editar">
+								<i class="fa fa-pencil"></i> Editar
+							</button>
 						</div>
 					</div>
-                </div>-->
+				</div>
 				<div class="row">    
 			        <div class="col-xs-12 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">		
 						<div class="form-group">
 							<label class="col-xs-3">Nombre: </label>
 							<div class="col-xs-9">
-						  		<input v-bind:disabled="editable" v-model="filtrada.Nombre" type="text" class="form-control" aria-label="Nombre" v-bind:class="{claseError: !valido.a}">
+						  		<input v-bind:disabled="editable" v-model="filtrada.Nombre" type="text" class="form-control" aria-label="Nombre" v-bind:class="{claseError: !valido.a}" placeholder="Insertar Nombre">
 								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.a"> 1 a 30 caracteres.</small></div>
 						  	</div>
 						</div>
@@ -37,7 +28,7 @@
 						<div class="form-group">
 						   	<label class="col-xs-3">Apellidos: </label>
             				<div class="col-xs-9">
-						  		<input v-bind:disabled="editable" v-model="filtrada.Apellidos" type="text" class="form-control" aria-label="Apellidos" v-bind:class="{claseError: !valido.b}">
+						  		<input v-bind:disabled="editable" v-model="filtrada.Apellidos" type="text" class="form-control" aria-label="Apellidos" v-bind:class="{claseError: !valido.b}" placeholder="Insertar Apellidos">
 								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.b"> 1 a 50 caracteres.</small></div>
 						  	</div>
 						</div>
@@ -48,7 +39,7 @@
 						<div class="form-group">
 						   	<label class="col-xs-3">DNI: </label>
             				<div class="col-xs-9">
-						  		<input v-bind:disabled="editable" v-model="filtrada.DNI" type="text" class="form-control" aria-label="DNI" v-bind:class="{claseError: !valido.c}">
+						  		<input v-bind:disabled="editable" v-model="filtrada.DNI" type="text" class="form-control" aria-label="DNI" v-bind:class="{claseError: !valido.c}" placeholder="Insertar DNI">
 								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.c"> Formato DNI válido.</small></div>
 						  	</div>
 						</div>
@@ -59,7 +50,7 @@
 						<div class="form-group">
 							<label class="col-xs-3">E-mail: </label>
 							<div class="col-xs-9">
-						  		<input v-bind:disabled="editable" v-model="filtrada.Email" type="text" class="form-control" aria-label="Email" v-bind:class="{claseError: !valido.d}">
+						  		<input v-bind:disabled="editable" v-model="filtrada.Email" type="text" class="form-control" aria-label="Email" v-bind:class="{claseError: !valido.d}" placeholder="Insertar E-mail">
 								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.d"> Formato E-mail válido.</small></div>
 						  	</div>
 						</div>
@@ -70,7 +61,7 @@
 						<div class="form-group">
 						   	<label class="col-xs-3">Nick: </label>
             				<div class="col-xs-9">
-						  		<input v-bind:disabled="editable" v-model="filtrada.Nick" type="text" class="form-control" aria-label="Nick" v-bind:class="{claseError: !valido.e}">
+						  		<input v-bind:disabled="editable" v-model="filtrada.Nick" type="text" class="form-control" aria-label="Nick" v-bind:class="{claseError: !valido.e}" placeholder="Insertar Nick">
 								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.e"> 1 a 30 caracteres.</small></div>
 						  	</div>
 						</div>
@@ -81,7 +72,7 @@
 						<div class="form-group">
 							<label class="col-xs-3">Contraseña: </label>
 							<div class="col-xs-9">
-						  		<input v-bind:disabled="editable" v-model="filtrada.Contrasena" type="text" class="form-control" aria-label="Contrasena" v-bind:class="{claseError: !valido.f}">
+						  		<input v-bind:disabled="editable" v-model="filtrada.Contrasena" type="text" class="form-control" aria-label="Contrasena" v-bind:class="{claseError: !valido.f}" placeholder="Insertar Contraseña">
 								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.f"> 1 a 10 caracteres.</small></div>
 						  	</div>
 						</div>
@@ -92,23 +83,12 @@
 						<div class="form-group">
 							<label class="col-xs-3">Cuenta:</label>
 							<div class="col-xs-9">
-						  		<input v-bind:disabled="editable" v-model="filtrada.Cuenta" type="text" class="form-control" aria-label="Cuenta" v-bind:class="{claseError: !valido.g}">
+						  		<input v-bind:disabled="editable" v-model="filtrada.Cuenta" type="text" class="form-control" aria-label="Cuenta" v-bind:class="{claseError: !valido.g}" placeholder="Insertar numero de cuenta">
 								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.g"> Dos letras mayusculas y 22 digitos.</small></div>
 						  	</div>
 						</div>
 					</div>
 				</div>
-                <!--<div class="row">    
-			        <div class="col-xs-12 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">		
-						<div class="form-group">
-							<label class="col-xs-3">Usuario: </label>
-							<div class="col-xs-9">
-						  		<input v-model="filtrada.DNIUsuario" type="text" class="form-control" aria-label="DNIUsuario" v-bind:class="{claseError: !valido.j}">
-								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.j"> DNI no válido.</small></div>
-						  	</div>
-						</div>
-					</div>
-				</div>-->
 				<div class="row">
 					<div class="col-xs-12 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">		
 						<div class="form-group">

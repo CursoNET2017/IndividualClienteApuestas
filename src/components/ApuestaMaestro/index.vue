@@ -1,25 +1,4 @@
 <template>
-    <!--<div id="ApuestaMaestro" class="container-fluid">
-        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
-            <nav class="collapse bd-links">
-            <h4>Categorias</h4>
-            <div class="bd-toc-item">
-                <a class="bd-toc-link" href="">Hola</a>
-                <ul class="nav bd-sidenav">
-                    <li class="bd-sidenav">
-                        <a href="">ESo ES</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="btn-group-vertical">
-                <button id="buttonTodas" class="btn btn-success btn-lg btn-block" v-on:click="filtrar(0)">Todas</button>
-                <button id="buttonFutbol" class="btn btn-success btn-lg btn-block" v-on:click="filtrar(1)">Futbol</button>
-                <button id="buttonBaloncesto" class="btn btn-success btn-lg btn-block" v-on:click="filtrar(2)">Baloncesto</button>
-                <button id="buttonTenis" class="btn btn-success btn-lg btn-block" v-on:click="filtrar(3)">Tenis</button>
-            </div>
-        </nav>
-        </div>
-    </div>-->
     <div id="ApuestaMaestro" class="container-fluid">
     <div class="nav-side-menu">
     <div class="brand">Categorias</div>
@@ -59,6 +38,7 @@
             <button id="insertar" @click="nuevoItem" class="btn btn-default">
 				<i class="fa fa-plus"></i> Inserción
             </button>
+            <div v-if="items.length > 1">
             <ul class="list-group" v-for="tipo in tipos" v-bind:key="tipo">
                 <div v-show="seleccion == tipos || seleccion == tipo">
                 <h3>{{tipo}}</h3>
@@ -76,11 +56,10 @@
                         <td>{{item.Pronostico}}</td>
                     </tr>
                 </table>
-                <!--<a class="list-group-item" v-for="item in items" v-bind:key="item.Id" v-if="item.Tipo==tipo" v-on:click="sacarDetalle(item.Id)">
-               * Evento: {{item.Evento1}} Vs {{item.Evento2}} ==> Una tabla chula chula *
-                </a>-->
                 </div>
             </ul>
+            </div>
+            <div v-else><h3>No existen apuestas registradas</h3></div>
         </div>
         <detalle v-else v-bind:idSeleccionado="idSeleccionado" v-bind:tipos="tipos" v-on:cerrar="cerrarDetalle" v-on:recarga="getTodos"></detalle>
     </div>

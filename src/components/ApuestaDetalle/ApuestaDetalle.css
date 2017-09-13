@@ -8,27 +8,33 @@
 }
 #ApuestaDetalle h2{
     text-align: center;
-    margin: 2%;
+    margin-top: 2%;
 }
 #ApuestaDetalle label {
     text-align: left;
 }
-#boton_actualizar {
+#ApuestaDetalle #boton_editar {
+    float: right;
+    margin-right: 13px;
+    margin: 20px;
+    margin-top: 0px;
+}
+#ApuestaDetalle #boton_actualizar {
     background-color: #0F800F;
     color: white;
     float: right;
 }
-#boton_cancelar {
+#ApuestaDetalle #boton_cancelar {
     background-color: #FF8000;
     color: white;
     float: left;
 }
-#boton_eliminar {
+#ApuestaDetalle #boton_eliminar {
     background-color: red;
     color: white;
     float: left;
 }
-#boton_guardar {
+#ApuestaDetalle #boton_guardar {
     background-color: #0F800F;
     color: white;
     float: right;
@@ -43,7 +49,4 @@
 }
 .claseError {
     border-color: red;
-}
-#boton_cancelar {
-    float: right;
 }
