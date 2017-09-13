@@ -6,7 +6,7 @@ export default {
     return {
       items: [],
       item: {},
-      tipos: {baloncesto:"Baloncesto", tenis:"Tenis", futbol:"Futbol"},
+      tipos: {baloncesto:"Baloncesto", tenis:"Tenis", futbol:"Fútbol"},
       seleccion: '',
       visibleCuerpo: true,
       idSeleccionado: undefined

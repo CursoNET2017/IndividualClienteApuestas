@@ -84,7 +84,7 @@
 							<label class="col-xs-3">Cuenta:</label>
 							<div class="col-xs-9">
 						  		<input v-bind:disabled="editable" v-model="filtrada.Cuenta" type="text" class="form-control" aria-label="Cuenta" v-bind:class="{claseError: !valido.g}" placeholder="Insertar numero de cuenta">
-								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.g"> Dos letras mayusculas y 22 digitos.</small></div>
+								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.g"> Dos letras mayúsculas y 22 dígitos.</small></div>
 						  	</div>
 						</div>
 					</div>

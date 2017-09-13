@@ -38,7 +38,7 @@ export default {
           this.valido.e = false;
           isValido = false;
         };
-        if (!/^([0-9])*[.]?[0-9]*$/.test(this.filtrada.Cuota)) {
+        if (!/^([0-9])+[.]?[0-9]*$/.test(this.filtrada.Cuota)) {
           this.valido.f = false;
           isValido = false;
         };
@@ -50,7 +50,7 @@ export default {
           this.valido.h = false;
           isValido = false;
         };
-        if (!/^([0-9])*[.]?[0-9]*$/.test(this.filtrada.Cantidad)) {
+        if (!/^([0-9])+[.]?[0-9]*$/.test(this.filtrada.Cantidad)) {
           this.valido.i = false;
           isValido = false;
         };
@@ -62,7 +62,7 @@ export default {
       },
       mensaje: function () {
         bootbox.alert({
-          message: "Campos no validos",
+          message: "Campos no válidos",
           size: 'small'
         });
       },
@@ -186,9 +186,6 @@ export default {
           }
         });
       }
-
-
-
   }, 
   mounted: function () {
     if (this.idSeleccionado!=undefined) {

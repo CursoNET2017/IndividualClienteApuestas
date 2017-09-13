@@ -51,7 +51,7 @@ export default {
       },
       mensaje: function () {
         bootbox.alert({
-          message: "Campos no validos",
+          message: "Campos no válidos",
           size: 'small'
         });
       },

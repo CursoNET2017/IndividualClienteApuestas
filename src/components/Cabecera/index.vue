@@ -3,7 +3,7 @@
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#">
-					<img :src="cabeceraDatos.logo" :alt="cabeceraDatos.nombre"> <p>Your Sports Bets</p> 
+					<img :src="cabeceraDatos.logo" :alt="cabeceraDatos.nombre"> <p>Your Best Bets</p> 
                     <router-link exact to="/"></router-link>
 				</a>
 				</div>

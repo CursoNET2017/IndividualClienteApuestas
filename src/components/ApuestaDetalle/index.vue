@@ -32,14 +32,14 @@
 							<label class="col-xs-3">Evento: </label>
 							<div class="col-xs-4">
 						  		<input v-bind:disabled="editable" v-model="filtrada.Evento1" type="text" class="form-control" aria-label="Evento" v-bind:class="{claseError: !valido.b}" placeholder="Equipo A">
-								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.b"> 1 a 30 caracteres.</small></div>
+								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.b"> De 1 a 30 caracteres.</small></div>
 						  	</div>
                             <div id="vs" class="col-xs-1">
 						  		<label>Vs</label>
 						  	</div>
                             <div class="col-xs-4">
 						  		<input v-bind:disabled="editable" v-model="filtrada.Evento2" type="text" class="form-control" aria-label="Evento" v-bind:class="{claseError: !valido.c}" placeholder="Equipo B">
-								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.c"> Entre 1 y 30 caracteres.</small></div>
+								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.c"> De 1 a 30 caracteres.</small></div>
 						  	</div>
 						</div>
 					</div>
@@ -58,9 +58,9 @@
                 <div class="row">    
 			        <div class="col-xs-12 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">  
 						<div class="form-group">
-						   	<label class="col-xs-3">Pronostico: </label>
+						   	<label class="col-xs-3">Pronóstico: </label>
             				<div class="col-xs-9">
-						  		<input v-bind:disabled="editable" v-model="filtrada.Pronostico" type="text" class="form-control" aria-label="Pronostico" v-bind:class="{claseError: !valido.e}" placeholder="Insertar pronostico">
+						  		<input v-bind:disabled="editable" v-model="filtrada.Pronostico" type="text" class="form-control" aria-label="Pronostico" v-bind:class="{claseError: !valido.e}" placeholder="Insertar pronóstico">
 								  <div class="ayudaInput"><small id="passwordHelpBlock" class="form-text text-muted" v-show="!valido.e"> Máximo 50 caracteres.</small></div>
 						  	</div>
 						</div>
